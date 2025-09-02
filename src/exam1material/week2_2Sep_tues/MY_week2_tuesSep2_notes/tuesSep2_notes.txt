@@ -34,10 +34,10 @@ When is this true? When is this false?
 
 p q  #  p → q
 --------------
-T T  #    
-T F  #    
-F T  #    
-F F  #    
+T T  #    T
+T F  #    F
+F T  #    T
+F F  #    T
 
 //////////////////////////////////////
 
@@ -45,22 +45,30 @@ Evaluating logical statements.
 
 Basic operations:
 
-∧ - 
-∨ - 
-¬ - 
-→ - 
+∧ - and
+∨ - or
+¬ - not
+→ - implies
 
 ////////////////////////////////////////
 
 Consider ¬p ∨ q ∧ r.
 
 --> what operation do we do first?
+()
+negation
+and
+or
 
 
 
 Order of operations
 
 In math? 
+()
+exponents
+*, /
++,-
 
 
 
@@ -72,7 +80,7 @@ For logic statements (∧ ∨ ¬ →)?
 
 Given this statement:
 
-    ¬p ∨ q ∧ r
+    ((¬p) ∨ (q ∧ r))
 
 
 
@@ -89,6 +97,8 @@ variable assignments:
 p is T
 q is F
 r is F
+
+
 
 
 
@@ -122,7 +132,7 @@ Top-level operator (what happens LAST?)
 
 
 top-level? 
-
+the or of not p and q and r
 
 How is this similar to a circuit? 
 
@@ -190,9 +200,9 @@ Contingent, contradictory, tautology
 
 
 
-contingent: 
+contingent: at least one truth asignment evaluates to true
 
-    Example? 
+    Example? p ∨ q
 
 
 
@@ -201,9 +211,9 @@ contradictory:
     Example? 
 
 
-tautology:
+tautology: Every truth assignment evaluates to true
 
-    Example? 
+    Example? !p || p
     
 
 ///////////////////////////////////////////
@@ -219,18 +229,18 @@ Write a truth table for:
 
 (p ∧ r) → (r ∨ ¬q)
 
-
+                  *
 -----------------------------
 p q r  #  (p ∧ r) → (r ∨ ¬q)
 -----------------------------
-T T T #      
-T T F #      
-T F T #      
-T F F #     
-F T T #     
-F T F #    
-F F T #     
-F F F #     
+T T T #     T     T     T     F
+T T F #     F     T     F     F  
+T F T #     T     T     T     T
+T F F #     F     T     T     T
+F T T #     F     T     T     F
+F T F #     F     T     F     F
+F F T #     F     T     T     T
+F F F #     F     T     T     T
 -----------------------------
 
 
